@@ -8,7 +8,7 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket = "aams-tf-state-staging"
-    prefix = "dev-tenderd-path"
+    prefix = "tenderd-dev-tenderd-path"
   }
   required_providers {
     google = {
