@@ -1,0 +1,12 @@
+
+replicaCount: 1
+
+
+
+image:
+  repository: "ahmedalimsolimansd/tenderd-devops-order-svc"
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 5001

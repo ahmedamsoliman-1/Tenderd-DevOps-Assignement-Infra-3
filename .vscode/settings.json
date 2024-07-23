@@ -1,0 +1,11 @@
+{
+    "yaml.customTags": [
+      "!WORKLOAD_IDENTITY_PROVIDER",
+      "!SA",
+      "!SAA",
+      "!GCP_PROJECT",
+      "!DEV_CLUSTER_NAME",
+      "!TENDERD_TOKEN"
+    ]
+  }
+  

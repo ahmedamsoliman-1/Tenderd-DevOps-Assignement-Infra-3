@@ -1,0 +1,11 @@
+
+replicaCount: 1
+
+
+image:
+  repository: "ahmedalimsolimansd/tenderd-devops-user-svc"
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 5000
