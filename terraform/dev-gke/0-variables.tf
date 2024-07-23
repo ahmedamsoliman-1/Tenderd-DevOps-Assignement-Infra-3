@@ -20,7 +20,8 @@ variable "vpc_name" { default = "tenderd-dev-main-vpc" }
 variable "general_name" { default = "tender-dev-general" }
 variable "router_name" { default = "tender-dev-router" }
 variable "subnet_name" { default = "tender-dev-private" }
-variable "nat_name" { default = "tender-dev-nat" }
+variable "nat_name" { default = "tenderd-dev-nat" }
+variable "allow_ssh" { default = "tenderd-ssh-allow" }
 
 variable "pod_range_name" { default = "tender-dev-k8s-pod-range" }
 variable "svc_range_name" { default = "tender-dev-k8s-service-range" }
