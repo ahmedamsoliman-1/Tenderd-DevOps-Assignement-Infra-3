@@ -1,0 +1,48 @@
+name: 'destroy-tenderd-cloud-dev'
+run-name: ${{ github.actor }} has triggered the pipeline for Terraform
+
+on:
+  push:
+    branches:
+    - main
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./terraform/dev-gke
+permissions:
+  contents: read
+
+jobs:
+  destroy-tenderd-cloud-dev:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v3
+    - name: Configure GCP credentials
+      id: auth
+      uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+        create_credentials_file: true
+        service_account: ${{ secrets.SA }}
+        token_format: "access_token"
+        access_token_lifetime: "120s"
+    - name: Echo stuff
+      run: printenv
+    - name: Setup Terraform with specified version on the runner
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.7.0
+        terraform_wrapper: true
+
+    - name: Terraform init
+      id: init
+      run: terraform init
+
+    - name: Terraform Destroy
+      run: terraform destroy -auto-approve
+
