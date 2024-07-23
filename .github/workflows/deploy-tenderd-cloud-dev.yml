@@ -43,7 +43,7 @@ jobs:
 
       - name: Get GKE Cluster Credentials
         run: |
-          gcloud container clusters get-credentials ${{ secrets.DEV_CLUSTER_NAME }} --zone us-east1-b --project ${{ secrets.GCP_PROJECT }}
+          gcloud container clusters get-credentials tender-gke-primary-cluster --zone us-east1-b --project ${{ secrets.GCP_PROJECT }}
 
       - name: Install Helm (if not present)
         run: |
