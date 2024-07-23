@@ -54,13 +54,35 @@ data:
   USER_SERVICE_URL: {{ .Values.env.users }}
   ORDER_SERVICE_URL: {{ .Values.env.orders }}
 ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: monitoring-ingress
+#   annotations:
+#     nginx.ingress.kubernetes.io/rewrite-target: /
+#     nginx.ingress.kubernetes.io/ssl-redirect: "false"
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#   - host: tendered.ahmedalimsoliman.com
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: frontend-svc
+#             port:
+#               number: 8080
+
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: monitoring-ingress
+  name: frontend§-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"  
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   rules:
@@ -74,3 +96,7 @@ spec:
             name: frontend-svc
             port:
               number: 8080
+  tls:
+  - hosts:
+    - tendered.ahmedalimsoliman.com
+    secretName: monitoring-cert-tls
