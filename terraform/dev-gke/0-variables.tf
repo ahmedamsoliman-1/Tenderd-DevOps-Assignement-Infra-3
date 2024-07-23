@@ -14,13 +14,13 @@ variable "credentials_file" {
 }
 
 # variable "caluster_name" { default = "dev-primary" }
-variable "caluster_name" { default = "tender_gke_primary_cluster" }
-variable "vpc_name" { default = "dev-main-vpc" }
+variable "caluster_name" { default = "tender-gke-primary-cluster" }
+variable "vpc_name" { default = "tenderd-dev-main-vpc" }
 # variable "spot_name" { default = "dev-spot" }
-variable "general_name" { default = "dev-general" }
-variable "router_name" { default = "dev-router" }
-variable "subnet_name" { default = "dev-private" }
-variable "nat_name" { default = "dev-nat" }
+variable "general_name" { default = "tender-dev-general" }
+variable "router_name" { default = "tender-dev-router" }
+variable "subnet_name" { default = "tender-dev-private" }
+variable "nat_name" { default = "tender-dev-nat" }
 
-variable "pod_range_name" { default = "dev-k8s-pod-range" }
-variable "svc_range_name" { default = "dev-k8s-service-range" }
+variable "pod_range_name" { default = "tender-dev-k8s-pod-range" }
+variable "svc_range_name" { default = "tender-dev-k8s-service-range" }
