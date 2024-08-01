@@ -4,7 +4,7 @@ replicaCount: 1
 
 image:
   repository: "ahmedalimsolimansd/tenderd-devops-frontend-svc"
-  tag: "1"
+  tag: "2"
 
 service:
   type: ClusterIP
