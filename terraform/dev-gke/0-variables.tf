@@ -9,14 +9,14 @@ variable "project_id" {
 variable "credentials_file" {
   type        = string
   description = "Path to the GCP credentials file"
-  # default     = "/Users/ahmed.soliman/workspace/ahmed/aams-ahmedamsoliman-1/terraform/big-star-420419-06436eef549c.json"
-  default = "/home/runner/gcp_credentials.json"
+  default     = "/Users/ahmed.soliman/workspace/ahmed/aams-ahmedamsoliman-1/terraform/big-star-420419-06436eef549c.json"
+  # default = "/home/runner/gcp_credentials.json"
 }
 
 # variable "caluster_name" { default = "dev-primary" }
 variable "caluster_name" { default = "tender-gke-primary-cluster" }
 variable "vpc_name" { default = "tenderd-dev-main-vpc" }
-# variable "spot_name" { default = "dev-spot" }
+variable "spot_name" { default = "tenderd-dev-spot" }
 variable "general_name" { default = "tender-dev-general" }
 variable "router_name" { default = "tender-dev-router" }
 variable "subnet_name" { default = "tender-dev-private" }
