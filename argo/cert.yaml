@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/ahmedamsoliman-1/Tenderd-DevOps-Assignement-Infra-3.git
-    targetRevision: dev-temp
+    targetRevision: main
     path: helm-charts/manged-helm/cert-manager
     helm:
       valueFiles:
