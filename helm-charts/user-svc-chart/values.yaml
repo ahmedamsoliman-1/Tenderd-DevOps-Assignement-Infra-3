@@ -4,7 +4,7 @@ replicaCount: 1
 
 image:
   repository: "ahmedalimsolimansd/tenderd-devops-user-svc"
-  tag: "latest_v1"
+  tag: "latest_v2"
 
 service:
   type: ClusterIP
