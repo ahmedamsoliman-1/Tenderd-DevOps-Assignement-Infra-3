@@ -5,7 +5,7 @@ replicaCount: 1
 
 image:
   repository: "ahmedalimsolimansd/tenderd-devops-order-svc"
-  tag: "latest_v3"
+  tag: "latest_v4"
 
 service:
   type: ClusterIP
