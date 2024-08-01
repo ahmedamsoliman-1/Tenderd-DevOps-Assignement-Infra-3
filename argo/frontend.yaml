@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: frontend-argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ahmedamsoliman-1/Tenderd-DevOps-Assignement-Infra-3.git
+    targetRevision: dev-temp
+    path: helm-charts/frontend-svc-chart
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=false
+    - ApplyOutOfSyncOnly=true

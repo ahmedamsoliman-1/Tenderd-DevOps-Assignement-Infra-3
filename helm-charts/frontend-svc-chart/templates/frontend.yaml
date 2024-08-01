@@ -99,4 +99,4 @@ spec:
   tls:
   - hosts:
     - tendered.ahmedalimsoliman.com
-    secretName: monitoring-cert-tls
+    secretName: tendered-cert-tls
