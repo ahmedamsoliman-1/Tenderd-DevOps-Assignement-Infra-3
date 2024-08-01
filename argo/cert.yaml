@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cert-manager-argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ahmedamsoliman-1/Tenderd-DevOps-Assignement-Infra-3.git
+    targetRevision: dev-temp
+    path: helm-charts/manged-helm/cert-manager
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cert-manager
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=false
+    - ApplyOutOfSyncOnly=true
