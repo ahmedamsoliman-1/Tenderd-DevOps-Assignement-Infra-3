@@ -20,5 +20,6 @@ box_text() {
 }
 
 
+
 box_text "Deploying all ArgoCD Applicaitons"
 kubectl apply -f .
