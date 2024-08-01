@@ -1,10 +1,10 @@
 
-replicaCount: 1
+replicaCount: 3
 
 
 image:
   repository: "ahmedalimsolimansd/tenderd-devops-frontend-svc"
-  tag: "v2"
+  tag: "v3"
 
 service:
   type: ClusterIP

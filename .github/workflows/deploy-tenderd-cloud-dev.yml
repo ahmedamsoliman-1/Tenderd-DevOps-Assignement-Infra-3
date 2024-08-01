@@ -60,6 +60,7 @@ jobs:
           # chmod +x deploy.sh
           # ./deploy.sh
           helm -n default list
+          kubectl -n default get pods
 
       - name: Deploy/Upgrade Helm Charts - User SVC
         run: |
@@ -67,6 +68,7 @@ jobs:
           # chmod +x deploy.sh
           # ./deploy.sh
           helm -n default list
+          kubectl -n default get svc
 
       - name: Deploy/Upgrade Helm Charts - Order SVC
         run: |
@@ -74,6 +76,7 @@ jobs:
           # chmod +x deploy.sh
           # ./deploy.sh
           helm -n default list
+          kubectl -n default get all
       
       # - name: Deploy Extra services - Monitoring - Ingress
       #   # env:
