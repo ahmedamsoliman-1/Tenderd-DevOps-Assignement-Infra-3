@@ -57,20 +57,23 @@ jobs:
       - name: Deploy/Upgrade Helm Charts - Frontend SVC
         run: |
           cd ../../helm-charts/frontend-svc-chart
-          chmod +x deploy.sh
-          ./deploy.sh
+          # chmod +x deploy.sh
+          # ./deploy.sh
+          helm -n default list
 
       - name: Deploy/Upgrade Helm Charts - User SVC
         run: |
           cd ../../helm-charts/user-svc-chart
-          chmod +x deploy.sh
-          ./deploy.sh
+          # chmod +x deploy.sh
+          # ./deploy.sh
+          helm -n default list
 
       - name: Deploy/Upgrade Helm Charts - Order SVC
         run: |
           cd ../../helm-charts/order-svc-chart
-          chmod +x deploy.sh
-          ./deploy.sh
+          # chmod +x deploy.sh
+          # ./deploy.sh
+          helm -n default list
       
       # - name: Deploy Extra services - Monitoring - Ingress
       #   # env:
