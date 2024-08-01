@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: frontend-argocd
   namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: |
+      frontend=docker.io/ahmedalimsolimansd/tenderd-devops-frontend-svc:latest
 spec:
   project: default
   source:
